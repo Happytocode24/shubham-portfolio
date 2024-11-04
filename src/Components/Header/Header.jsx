@@ -22,7 +22,7 @@ export default function Header({scrollToAbout,scrollToEducation,
 
                 <div className='text-container'>
                     <span className="intro-welcome">Welcome !</span><br />
-                    <div class= 'header-intro'>
+                    <div className= 'header-intro'>
                     <span>This is </span>
                     <span className="intro-profession">Shubham Mishra,</span><br />
                     <span>A professional</span><br />
