@@ -1,0 +1,296 @@
+.header-container {
+  background-image: url('../Header_Background.jpeg');
+  background-attachment: fixed;
+  padding: 20px; 
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  display: flex;
+background-position: center;
+flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px; /* Reduced padding */
+  list-style: none;
+  margin: 0;
+}
+
+.name {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+
+}
+
+.header-button-container {
+  display: flex;
+  gap: 30px;
+  margin-left: 200px;
+}
+
+.header-button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.header-button:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  color: #ff6347;
+}
+
+.header-button:active {
+  transform: scale(0.98);
+}
+
+.intro-container {
+  color: whitesmoke;
+  margin-top: 50px;
+  margin-left: 100px;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  margin-right: 50px;
+  width: 550px;
+  height: 550px;
+}
+
+.image-container {
+  width: 550px;
+  height: 550px;
+  margin-left: 150px;
+}
+
+.intro-welcome {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 6rem;
+  animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+  color: #ff6347;
+}
+
+.header-intro{
+  font-size: 2.6rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.intro-profession {
+  color: #208fff;
+}
+
+.custom-button-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 10px;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #0b0866;
+  border: 2px solid #ff6347;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  height: 40px;
+}
+
+.custom-button:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  color: #ff6347;
+}
+
+.custom-button:active {
+  background-color: #d93b00;
+  transform: scale(0.98);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+  border: 2px solid #ff6347;
+}
+
+.icon-small {
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.header-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.header-social-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.header-social-media-logo {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s, filter 0.3s;
+  margin: 0 10px;
+}
+
+.header-social-media-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Styles for screens smaller than 1000px */
+@media (max-width: 1000px) {
+  .header-button-container {
+    display: none;
+  }
+
+  .name {
+    font-size: 1.3rem;
+    align-items:flex-end;
+    text-align:left
+   
+  }
+
+  .intro-container {
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-container,
+  .image-container {
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .intro-welcome {
+    font-size: 3rem;
+  }
+
+  .intro-profession {
+    font-size: 1.3rem;
+  }
+
+  .custom-button-container {
+    flex-direction: row; /* Set direction to row */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .custom-button {
+    padding: 7px 11px;
+    font-size: 0.7rem;
+    min-width: 110px;
+    height: 30px;
+  }
+  
+  .profile-picture {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+  }
+
+  .header-social-media-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+.header-intro{
+  font-size: 1.3rem;
+}
+
+.header-social-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 35px;
+}
+
+ 
+}
+
+@media (max-width: 450px) {
+  .intro-container {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-picture {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+  }
+
+  .custom-button {
+    padding: 6px 12px;
+    font-size: 0.6rem;
+    min-width: 100px;
+    height: 30px;
+  }
+
+  .name {
+    font-size: 1.3rem;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

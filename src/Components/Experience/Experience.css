@@ -1,0 +1,87 @@
+.experience-container {
+    background-image: url('../ExperienceBackground.png');
+    background-attachment: fixed;
+    padding: 40px;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    display: flex;
+  background-position: center;
+  flex-direction: column;
+  }
+
+  .experience-header-title{
+    font-size: 3.5rem;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 30px;
+    color: rgb(2, 2, 2);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    height: auto; /* Set a fixed height for the scrolling area */
+    overflow-y: auto; /* Allow vertical scrolling */
+    width: 100%; /* Full width */
+  }
+  
+  .experience-item {
+    position: relative;
+    margin: 40px 0; /* Added margin for spacing */
+    padding-left: 30px; /* Added padding to create space for the dot */
+  }
+  
+  .experience-title {
+    margin-bottom: 10px; /* Space between title and card */
+  }
+  
+  .dot {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    z-index: 1;
+  }
+  
+  .line {
+    width: 2px;
+    height: 350px; /* Adjust height to connect to the next dot */
+    background-color: black;
+    position: absolute;
+    left: 7px; /* Center line relative to the dot */
+    top: 30px; /* Position line below the dot */
+    z-index: 0;
+  }
+  
+  .experience-card {
+    background: rgba(121, 111, 102, 0.719); /* Background for the card */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    min-width: auto;
+    max-width: 700px;
+    height:fit-content;
+    color: white;
+    
+  }
+
+  /* Styles for screens smaller than 1000px */
+@media (max-width: 1000px) {
+  .line {
+    height: 500px; /* Adjust height to connect to the next dot */
+  }
+
+ .experience-header-title{
+font-size: 2.5rem;
+  }
+
+}
+
+  
