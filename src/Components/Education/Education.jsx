@@ -15,30 +15,18 @@ const education = [
 
 const Education = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
-  const [revealedEducation, setRevealedEducation] = useState([education[0]]);
-  const [isScrolling, setIsScrolling] = useState(false);
   const [containerRef, setContainerRef] = useState(null);
+  const educationLength = education.length;
 
   const handleScroll = useCallback((event) => {
-    if (isScrolling) return;
-
     const { deltaY } = event;
-    setIsScrolling(true);
 
-    setTimeout(() => {
-      if (deltaY > 0 && index < education.length - 1) {
-        setIndex((prevIndex) => prevIndex + 1);
-        setRevealedEducation((prev) => [
-          ...prev,
-          education[prev.length]
-        ]);
-      } else if (deltaY < 0 && index > 0) {
-        setIndex((prevIndex) => prevIndex - 1);
-        setRevealedEducation((prev) => prev.slice(0, -1));
-      }
-      setIsScrolling(false);
-    }, 50); // Increased delay for smoother scrolling
-  }, [isScrolling, index]);
+    if (deltaY > 0 && index < educationLength - 1) {
+      setIndex((prevIndex) => prevIndex + 1);
+    } else if (deltaY < 0 && index > 0) {
+      setIndex((prevIndex) => prevIndex - 1);
+    }
+  }, [index, educationLength]);
 
   useEffect(() => {
     if (containerRef) {
@@ -55,22 +43,34 @@ const Education = React.forwardRef((props, ref) => {
     <div className="education-container" ref={ref}>
       <h1 className="education-title">Education</h1>
       <div className="education-list" ref={setContainerRef}>
-      {revealedEducation.map((education, i) => (
-  <div className="education-item" key={i}>
-    <div className="education-card ">
-      <div className='logo-title-container'>
-      <img src={education.logo} alt={`${education.title} logo`} className="education-logo" />
-      <h2 className="college-title">{education.title}</h2>
-      </div>
-      <p>{education.description}</p>
-    </div>
-    {i < revealedEducation.length - 1 && <div className="connecting-line" />}
-    <div className="dot" />
-  </div>
-))}
+        {education.map((item, i) => {
+          let className = "education-item";
+          if (i === index) {
+            className += " active";
+          } else if (i < index) {
+            className += " above";
+          } else {
+            className += " below";
+          }
+
+          return (
+            <div className={className} key={i}>
+              <div className="education-card">
+                <div className="logo-title-container">
+                  <img
+                    src={item.logo}
+                    alt={`${item.title} logo`}
+                    className="education-logo"
+                  />
+                  <h2 className="college-title">{item.title}</h2>
+                </div>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 });
-
 export default Education;
