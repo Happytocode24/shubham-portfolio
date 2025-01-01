@@ -1,26 +1,20 @@
 import './Education.css';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
+import { useWheel, useDrag } from '@use-gesture/react';
 import bitslogo from '../logos/BITS-logo.png';
-import rgpvLogo from '../logos/rgpv.svg'
+import rgpvLogo from '../logos/rgpv.svg';
+
 const education = [
-  {  logo:bitslogo,
-    title: "Birla Institute of Technology and Science Pilani",
-    description: "MTech in Computer Science"
-  },
-  
-  { logo:rgpvLogo,
-    title: "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
-     description:"BTech Computer Science Engineering"},
+  { logo: bitslogo, title: "Birla Institute of Technology and Science Pilani", description: "MTech in Computer Science" },
+  { logo: rgpvLogo, title: "Rajiv Gandhi Proudyogiki Vishwavidyalaya", description: "BTech Computer Science Engineering" },
 ];
 
 const Education = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
-  const [containerRef, setContainerRef] = useState(null);
   const educationLength = education.length;
+  const containerRef = useRef(null);
 
-  const handleScroll = useCallback((event) => {
-    const { deltaY } = event;
-
+  const handleScroll = useCallback(({ delta: [, deltaY] }) => {
     if (deltaY > 0 && index < educationLength - 1) {
       setIndex((prevIndex) => prevIndex + 1);
     } else if (deltaY < 0 && index > 0) {
@@ -28,21 +22,21 @@ const Education = React.forwardRef((props, ref) => {
     }
   }, [index, educationLength]);
 
-  useEffect(() => {
-    if (containerRef) {
-      containerRef.addEventListener("wheel", handleScroll);
+  const handleDrag = useCallback(({ movement: [, my], memo = index }) => {
+    const newIndex = memo - Math.sign(my);
+    if (newIndex >= 0 && newIndex < educationLength) {
+      setIndex(newIndex);
     }
-    return () => {
-      if (containerRef) {
-        containerRef.removeEventListener("wheel", handleScroll);
-      }
-    };
-  }, [handleScroll, containerRef]);
+    return memo;
+  }, [index, educationLength]);
+
+  useWheel(handleScroll, { target: containerRef });
+  useDrag(handleDrag, { target: containerRef });
 
   return (
     <div className="education-container" ref={ref}>
       <h1 className="education-title">Education</h1>
-      <div className="education-list" ref={setContainerRef}>
+      <div className="education-list" ref={containerRef}>
         {education.map((item, i) => {
           let className = "education-item";
           if (i === index) {
@@ -57,11 +51,7 @@ const Education = React.forwardRef((props, ref) => {
             <div className={className} key={i}>
               <div className="education-card">
                 <div className="logo-title-container">
-                  <img
-                    src={item.logo}
-                    alt={`${item.title} logo`}
-                    className="education-logo"
-                  />
+                  <img src={item.logo} alt={`${item.title} logo`} className="education-logo" />
                   <h2 className="college-title">{item.title}</h2>
                 </div>
                 <p>{item.description}</p>
@@ -73,4 +63,5 @@ const Education = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
 export default Education;

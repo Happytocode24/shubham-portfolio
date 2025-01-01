@@ -69,6 +69,7 @@
 
 .experience-title {
   margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .experience-card {
@@ -85,14 +86,21 @@
 
 @media (max-width: 1000px) {
   .experience-header-title {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
 
   .experience-card {
     border-radius: 8px;
+    color: white;
+    font-size:smaller;
   }
 
   .experience-list {
     height: 400px;
   }
+
+  .experience-title {
+    font-size: 1.0rem;
+  }
+  
 }
