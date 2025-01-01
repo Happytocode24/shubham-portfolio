@@ -17,9 +17,9 @@ const experiences = [
 const Experience = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
   const containerRef = useRef(null);
+  const touchStartY = useRef(0);
 
-  const handleScroll = useCallback((event) => {
-    const { deltaY } = event;
+  const handleScroll = useCallback((deltaY) => {
     if (deltaY > 0 && index < experiences.length - 1) {
       setIndex((prevIndex) => prevIndex + 1);
     } else if (deltaY < 0 && index > 0) {
@@ -27,17 +27,36 @@ const Experience = React.forwardRef((props, ref) => {
     }
   }, [index]);
 
+  const handleWheel = useCallback((event) => {
+    handleScroll(event.deltaY);
+  }, [handleScroll]);
+
+  const handleTouchStart = useCallback((event) => {
+    touchStartY.current = event.touches[0].clientY;
+  }, []);
+
+  const handleTouchMove = useCallback((event) => {
+    const touchEndY = event.touches[0].clientY;
+    const deltaY = touchStartY.current - touchEndY;
+    handleScroll(deltaY);
+    touchStartY.current = touchEndY;
+  }, [handleScroll]);
+
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
-      container.addEventListener("wheel", handleScroll);
+      container.addEventListener("wheel", handleWheel);
+      container.addEventListener("touchstart", handleTouchStart);
+      container.addEventListener("touchmove", handleTouchMove);
     }
     return () => {
       if (container) {
-        container.removeEventListener("wheel", handleScroll);
+        container.removeEventListener("wheel", handleWheel);
+        container.removeEventListener("touchstart", handleTouchStart);
+        container.removeEventListener("touchmove", handleTouchMove);
       }
     };
-  }, [handleScroll]);
+  }, [handleWheel, handleTouchStart, handleTouchMove]);
 
   return (
     <div className="experience-container" ref={ref}>
