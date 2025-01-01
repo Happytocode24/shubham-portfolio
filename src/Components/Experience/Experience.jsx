@@ -1,5 +1,5 @@
 import './Experience.css';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 const experiences = [
   {
@@ -18,14 +18,14 @@ const Experience = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
   const containerRef = useRef(null);
 
-  const handleScroll = (event) => {
+  const handleScroll = useCallback((event) => {
     const { deltaY } = event;
     if (deltaY > 0 && index < experiences.length - 1) {
       setIndex((prevIndex) => prevIndex + 1);
     } else if (deltaY < 0 && index > 0) {
       setIndex((prevIndex) => prevIndex - 1);
     }
-  };
+  }, [index]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -37,7 +37,7 @@ const Experience = React.forwardRef((props, ref) => {
         container.removeEventListener("wheel", handleScroll);
       }
     };
-  }, [index]);
+  }, [handleScroll]);
 
   return (
     <div className="experience-container" ref={ref}>
