@@ -43,7 +43,7 @@
   pointer-events: none;
   width: 100%;
   max-width: 600px;
-  height: auto; /* Adjust height dynamically based on content */
+  height: auto; 
   z-index: 1;
 }
 
@@ -58,13 +58,13 @@
 
 .education-item.above {
   transform: translate(-50%, calc(-150% - 50px)) scale(0.9);
-  opacity: 0.3;
+  opacity: 0.1;
   z-index: 2;
 }
 
 .education-item.below {
   transform: translate(-50%, calc(150% + 50px)) scale(0.9);
-  opacity: 0.3;
+  opacity: 0.1;
   z-index: 1;
 }
 

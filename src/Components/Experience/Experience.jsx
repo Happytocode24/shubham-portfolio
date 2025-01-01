@@ -1,17 +1,28 @@
 import './Experience.css';
 import React, { useState, useRef } from 'react';
 import { useWheel, useDrag } from '@use-gesture/react';
+import ExperienceCard from './ExperienceCard';
 
 const experiences = [
   {
     title: "Software Engineer at Cisco",
-    description:
-      "I developed and maintained over 20 web pages using Angular and ReactJS, focusing on performance analysis through metrics like LCP and FCP, and reducing data load times by 30% through effective optimization techniques. I refactored legacy code by transitioning from NGRX to Component Store, cutting down on 30 files and achieving a 24% reduction in code lines. My contributions also included extensive testing with Cypress and unit tests, ensuring over 96% coverage for feature reliability. Additionally, I engaged in server-side development with Node.js, creating APIs and backend logic. My expertise in HTML and CSS enabled the creation of responsive and visually appealing web pages.",
+    work: {
+      Organisation: "Cisco",
+      Location: 'Banglore',
+      projectName: "Cx Cloud",
+      techStack: ['React.js', 'Angular', 'Python', 'Machine Learning', 'Flask', 'Java', 'SpringBoot'],
+      Description: "Responsibilities include maintaining and developing features using Angular and Java microservices. Orchestrating the full SDLC lifecycle which involves designing, developing, testing, and deploying our own code using CI/CD pipelines."
+    },
   },
   {
     title: "Intern at Cisco",
-    description:
-      "I designed and implemented a support bot to streamline Cisco licensing queries, scripting core functionalities in Python and integrating a webhook for real-time API interaction. Additionally, I developed a dedicated website to host the bot, providing a seamless platform for obtaining licensing support.",
+    work: {
+      Organisation: "Cisco",
+      Location: 'Banglore',
+      projectName: "Licensing Support Bot",
+      techStack: ['Python', 'Webhook', 'HTML', 'CSS' ,'React.js', 'Angular'],
+      Description: "Designed and implemented a support bot to streamline Cisco licensing queries, scripting core functionalities in Python and integrating a webhook for real-time API interaction. Developed a dedicated website to host the bot, providing a seamless platform for obtaining licensing support."
+    },
   },
 ];
 
@@ -47,9 +58,7 @@ const Experience = React.forwardRef((props, ref) => {
             }`}
           >
             <h2 className="experience-title">{exp.title}</h2>
-            <div className="experience-card">
-              <p>{exp.description}</p>
-            </div>
+            <ExperienceCard key={i} work={exp.work} />
           </div>
         ))}
       </div>

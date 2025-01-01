@@ -1,0 +1,60 @@
+.experience-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 700px;
+  min-width: auto;
+  min-height: 150px;
+  background-color: rgba(88, 85, 85, 0.8);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size:large;
+}
+
+.experience-card .tech-stack,
+.experience-card .description {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.experience-details {
+  white-space: pre-wrap;
+}
+
+.const-color {
+  color: rgb(237, 91, 115);
+}
+
+.equal-color {
+  color: rgb(237, 91, 115);
+}
+
+.braces-color {
+  color: yellow;
+}
+
+.value-color {
+  color: orange;
+}
+
+@media (max-width: 1000px) {
+  .experience-card {
+    border-radius: 8px;
+    color: white;
+    font-size: smaller;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-card {
+    font-size: x-small;
+    padding: 10px;
+  }
+}
