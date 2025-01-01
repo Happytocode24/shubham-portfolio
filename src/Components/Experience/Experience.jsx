@@ -1,5 +1,6 @@
 import './Experience.css';
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
+import { useWheel, useDrag } from '@use-gesture/react';
 
 const experiences = [
   {
@@ -17,51 +18,27 @@ const experiences = [
 const Experience = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
   const containerRef = useRef(null);
-  const touchStartY = useRef(0);
 
-  const handleScroll = useCallback((deltaY) => {
+  const handleScroll = (deltaY) => {
     if (deltaY > 0 && index < experiences.length - 1) {
       setIndex((prevIndex) => prevIndex + 1);
     } else if (deltaY < 0 && index > 0) {
       setIndex((prevIndex) => prevIndex - 1);
     }
-  }, [index]);
+  };
 
-  const handleWheel = useCallback((event) => {
+  const bind = useWheel(({ event }) => {
     handleScroll(event.deltaY);
-  }, [handleScroll]);
+  });
 
-  const handleTouchStart = useCallback((event) => {
-    touchStartY.current = event.touches[0].clientY;
-  }, []);
-
-  const handleTouchMove = useCallback((event) => {
-    const touchEndY = event.touches[0].clientY;
-    const deltaY = touchStartY.current - touchEndY;
-    handleScroll(deltaY);
-    touchStartY.current = touchEndY;
-  }, [handleScroll]);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("wheel", handleWheel);
-      container.addEventListener("touchstart", handleTouchStart);
-      container.addEventListener("touchmove", handleTouchMove);
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleWheel);
-        container.removeEventListener("touchstart", handleTouchStart);
-        container.removeEventListener("touchmove", handleTouchMove);
-      }
-    };
-  }, [handleWheel, handleTouchStart, handleTouchMove]);
+  const bindDrag = useDrag(({ movement: [_, my] }) => {
+    handleScroll(-my);
+  });
 
   return (
     <div className="experience-container" ref={ref}>
       <h1 className="experience-header-title">Experience</h1>
-      <div className="experience-list" ref={containerRef}>
+      <div className="experience-list" ref={containerRef} {...bind()} {...bindDrag()}>
         {experiences.map((exp, i) => (
           <div
             key={i}
