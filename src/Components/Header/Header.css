@@ -198,29 +198,22 @@
   filter: brightness(1.2);
 }
 
-
+/* Styles for screens smaller than 1000px */
 @media (max-width: 1000px) {
   .header-button-container {
-    gap: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header-button {
-    font-size: 0.5rem;
-    font-family: Arial, Helvetica, sans-serif;
+    display: none;
   }
 
   .name {
-    display: none;
+    font-size: 1.3rem;
+    align-items:flex-end;
+    text-align:left
+   
   }
 
   .intro-container {
     margin: 0;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
   }
@@ -241,7 +234,7 @@
   }
 
   .custom-button-container {
-    flex-direction: row;
+    flex-direction: row; /* Set direction to row */
     gap: 10px;
     justify-content: center;
     align-items: center;
@@ -254,12 +247,13 @@
     min-width: 110px;
     height: 30px;
   }
-
+  
   .profile-picture {
     width: 180px;
     height: 180px;
     margin-top: 10px;
-    margin-left: 0;
+    margin-left: 20px;
+
   }
 
   .header-social-media-logo {
@@ -267,15 +261,18 @@
     height: 30px;
   }
 
-  .header-intro {
-    font-size: 1.3rem;
-  }
+.header-intro{
+  font-size: 1.3rem;
+}
 
-  .header-social-links {
-    gap: 20px;
-    align-items: center;
-    margin-left: 0;
-  }
+.header-social-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 35px;
+}
+
+ 
 }
 
 @media (max-width: 450px) {
@@ -297,5 +294,12 @@
     font-size: 0.6rem;
     min-width: 100px;
     height: 30px;
+  }
+
+  .name {
+    font-size: 1.3rem;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
   }
 }
