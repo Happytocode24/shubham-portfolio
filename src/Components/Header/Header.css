@@ -1,20 +1,19 @@
 .header-container {
-  /* background-image: url('../Header_Background.jpeg'); */
   background-attachment: fixed;
   padding: 20px; 
   align-items: center;
   position: relative;
   background-size: cover;
   display: flex;
-background-position: center;
-flex-direction: column;
+  background-position: center;
+  flex-direction: column;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 20px; /* Reduced padding */
+  padding: 5px 20px;
   list-style: none;
   margin: 0;
 }
@@ -24,7 +23,6 @@ flex-direction: column;
   font-size: 2rem;
   font-weight: 700;
   color: white;
-
 }
 
 .header-button-container {
@@ -87,7 +85,7 @@ flex-direction: column;
   color: #ff6347;
 }
 
-.header-intro{
+.header-intro {
   font-size: 2.6rem;
 }
 
@@ -118,32 +116,43 @@ flex-direction: column;
   margin-top: 10px;
 }
 
+@keyframes hoverEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 .custom-button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
   color: #ffffff;
-  background-color: #0b0866;
+  background: linear-gradient(270deg, #ff6347, #0b0866);
+  background-size: 200% 200%;
   border: 2px solid #ff6347;
   border-radius: 30px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.3s, background-position 0.5s;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   min-width: 150px;
   height: 40px;
 }
 
 .custom-button:hover {
+  background-position: 100% 0;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
-  color: #ff6347;
+  color: #ffffff;
 }
 
 .custom-button:active {
-  background-color: #d93b00;
+  background-position: 100% 50%;
   transform: scale(0.98);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }

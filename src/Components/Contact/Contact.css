@@ -82,18 +82,27 @@
     height: 100px;
     resize: vertical;
 }
+@keyframes hoverEffect {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
 
 .send-button {
     max-width: 200px; /* Sets the button width limit */
     padding: 10px 20px;
     color: #ffffff;
-    background-color: #0b0866;
+    background: linear-gradient(270deg, #ff6347, #0b0866);
+     background-size: 200% 200%;
     border: 2px solid #ff6347;
     border-radius: 30px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    transition: transform 0.2s, box-shadow 0.3s, background-position 0.5s;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     align-self: center; /* Centers the button in the form */
 }
@@ -101,7 +110,10 @@
 .send-button:hover {
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
+    background-position: 100% 0;
+    color: #ffffff;
 }
+
 
 .send-button:active {
     background-color: #d93b00; 

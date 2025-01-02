@@ -5,8 +5,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* background-image: url('../src/Components/Blue.jpg'); */
-  background-color:rgb(17, 17, 76);
+  background-color:rgb(5, 5, 60);
 }
 
 .footer-text {
