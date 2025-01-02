@@ -54,7 +54,7 @@
 
 @media (max-width: 600px) {
   .experience-card {
-    font-size: x-small;
+    font-size: smaller;
     padding: 10px;
   }
 }

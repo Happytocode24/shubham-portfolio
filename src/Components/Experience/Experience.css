@@ -102,7 +102,7 @@
 
 @media (max-width: 600px) {
   .experience-header-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
 
@@ -111,7 +111,7 @@
   }
 
   .experience-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .experience-item.active {

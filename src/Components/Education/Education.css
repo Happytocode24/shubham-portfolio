@@ -95,9 +95,12 @@
   font-weight: bold;
     margin: 0;
   font-size: 1.5rem;
-  color: orange;
+  color: white;
 }
 
+.degree-description{
+  color: white;
+}
 .education-item p {
     margin: 0;
     font-size: 1.0rem;

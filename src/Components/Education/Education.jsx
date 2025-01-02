@@ -54,7 +54,7 @@ const Education = React.forwardRef((props, ref) => {
                   <img src={item.logo} alt={`${item.title} logo`} className="education-logo" />
                   <h2 className="college-title">{item.title}</h2>
                 </div>
-                <p>{item.description}</p>
+                <p className='degree-description'>{item.description}</p>
               </div>
             </div>
           );
