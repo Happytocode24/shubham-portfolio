@@ -26,7 +26,7 @@ const Education = React.forwardRef((props, ref) => {
     }
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 500);
+    }, 300);
   }, [index, educationLength]);
 
   const handleDrag = useCallback(({ movement: [, my], memo = index }) => {
