@@ -3,7 +3,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import { useWheel, useDrag } from '@use-gesture/react';
 import bitslogo from '../logos/BITS-logo.png';
 import rgpvLogo from '../logos/rgpv.svg';
-import maharashi from '../logos/maharashi-vidhya-mandir.png'
+import maharashi from '../logos/maharashi-vidhya-mandir.png';
 
 const education = [
   { logo: bitslogo, title: "Birla Institute of Technology and Science Pilani", description: "MTech in Computer Science" },
@@ -26,7 +26,7 @@ const Education = React.forwardRef((props, ref) => {
     }
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 500); 
+    }, 500);
   }, [index, educationLength]);
 
   const handleDrag = useCallback(({ movement: [, my], memo = index }) => {
@@ -37,7 +37,7 @@ const Education = React.forwardRef((props, ref) => {
     }
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 500); 
+    }, 500);
     return memo;
   }, [index, educationLength]);
 
@@ -66,6 +66,7 @@ const Education = React.forwardRef((props, ref) => {
                   <h2 className="college-title">{item.title}</h2>
                 </div>
                 <p className='degree-description'>{item.description}</p>
+                <div className="card-edge" />
               </div>
             </div>
           );
