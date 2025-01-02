@@ -42,21 +42,35 @@ const Experience = React.forwardRef((props, ref) => {
 
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 300);  
+    }, 500);  // Adjust the timeout duration as needed
   }, [index]);
 
-  const bind = useWheel(({ event }) => {
+  const handleDrag = useCallback(({ movement: [_, my], memo = index }) => {
+    if (timeoutRef.current) return;
+    const newIndex = memo - Math.sign(my);
+    if (newIndex >= 0 && newIndex < experiences.length) {
+      setIndex(newIndex);
+    }
+    timeoutRef.current = setTimeout(() => {
+      timeoutRef.current = null;
+    }, 500);  // Adjust the timeout duration as needed
+    return memo;
+  }, [index]);
+
+  const bindWheel = useWheel(({ event }) => {
     handleScroll(event.deltaY);
   });
 
-  const bindDrag = useDrag(({ movement: [_, my] }) => {
-    handleScroll(-my);
+  const bindDrag = useDrag(handleDrag, {
+    bounds: { top: 0, bottom: experiences.length - 1 },
+    rubberband: true,
+    axis: 'y'
   });
 
   return (
     <div className="experience-container" ref={ref}>
       <h1 className="experience-header-title">Experience</h1>
-      <div className="experience-list" ref={containerRef} {...bind()} {...bindDrag()}>
+      <div className="experience-list" ref={containerRef} {...bindWheel()} {...bindDrag()}>
         {experiences.map((exp, i) => (
           <div
             key={i}
