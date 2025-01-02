@@ -41,13 +41,33 @@ const Education = React.forwardRef((props, ref) => {
     return memo;
   }, [index, educationLength]);
 
+  const handleTouchStart = useCallback((e) => {
+    const touch = e.touches[0];
+    containerRef.current.touchStartY = touch.clientY;
+  }, []);
+
+  const handleTouchMove = useCallback((e) => {
+    const touch = e.touches[0];
+    const touchEndY = touch.clientY;
+    const deltaY = containerRef.current.touchStartY - touchEndY;
+
+    if (Math.abs(deltaY) > 10) {
+      handleScroll({ delta: [0, deltaY] });
+    }
+  }, [handleScroll]);
+
   useWheel(handleScroll, { target: containerRef });
   useDrag(handleDrag, { target: containerRef });
 
   return (
     <div className="education-container" ref={ref}>
       <h1 className="education-title">Education</h1>
-      <div className="education-list" ref={containerRef}>
+      <div
+        className="education-list"
+        ref={containerRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
         {education.map((item, i) => {
           let className = "education-item";
           if (i === index) {
@@ -65,8 +85,7 @@ const Education = React.forwardRef((props, ref) => {
                   <img src={item.logo} alt={`${item.title} logo`} className="education-logo" />
                   <h2 className="college-title">{item.title}</h2>
                 </div>
-                <p className='degree-description'>{item.description}</p>
-                <div className="card-edge" />
+                <p className="degree-description">{item.description}</p>
               </div>
             </div>
           );
