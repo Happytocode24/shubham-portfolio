@@ -1,5 +1,5 @@
 import './Experience.css';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { useWheel, useDrag } from '@use-gesture/react';
 import ExperienceCard from './ExperienceCard';
 
@@ -29,14 +29,21 @@ const experiences = [
 const Experience = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
   const containerRef = useRef(null);
+  const timeoutRef = useRef(null);
 
-  const handleScroll = (deltaY) => {
+  const handleScroll = useCallback((deltaY) => {
+    if (timeoutRef.current) return;
+
     if (deltaY > 0 && index < experiences.length - 1) {
       setIndex((prevIndex) => prevIndex + 1);
     } else if (deltaY < 0 && index > 0) {
       setIndex((prevIndex) => prevIndex - 1);
     }
-  };
+
+    timeoutRef.current = setTimeout(() => {
+      timeoutRef.current = null;
+    }, 300);  
+  }, [index]);
 
   const bind = useWheel(({ event }) => {
     handleScroll(event.deltaY);
@@ -58,7 +65,7 @@ const Experience = React.forwardRef((props, ref) => {
             }`}
           >
             <h2 className="experience-title">{exp.title}</h2>
-            <ExperienceCard key={i} work={exp.work} />
+            <ExperienceCard work={exp.work} />
           </div>
         ))}
       </div>

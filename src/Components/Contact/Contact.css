@@ -59,9 +59,9 @@
 }
 
 .social-links {
-    display: flex;             /* Use flexbox for alignment */
-    gap: 20px;                /* Space between the logos */
-    align-items: center;      /* Center logos vertically */
+    display: flex;            
+    gap: 20px;                
+    align-items: center; 
 }
 
 .contact-form {
@@ -92,7 +92,7 @@
   }
 
 .send-button {
-    max-width: 200px; /* Sets the button width limit */
+    max-width: 200px;
     padding: 10px 20px;
     color: #ffffff;
     background: linear-gradient(270deg, #ff6347, #0b0866);
@@ -104,7 +104,7 @@
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.3s, background-position 0.5s;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    align-self: center; /* Centers the button in the form */
+    align-self: center;
 }
 
 .send-button:hover {
