@@ -1,5 +1,5 @@
 .experience-container {
-  background-image: url('../ExperienceBackground.png');
+  /* background-image: url('../ExperienceBackground.png'); */
   background-attachment: fixed;
   padding: 40px;
   display: flex;
@@ -16,7 +16,7 @@
   font-weight: bold;
   align-self: flex-start;
   margin-bottom: 30px;
-  color: rgb(2, 2, 2);
+  color: #ff6347;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -71,6 +71,7 @@
 .experience-title {
   margin-bottom: 10px;
   font-size: 1.5rem;
+  color: #ff6347;
 }
 
 

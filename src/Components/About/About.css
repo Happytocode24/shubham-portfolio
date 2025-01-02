@@ -1,5 +1,5 @@
 .about-container {
-    background-image: url('../aboutMe.jpg');
+    /* background-image: url('../aboutMe.jpg'); */
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -15,7 +15,7 @@
     font-weight: bold;
     align-self: flex-start;
     margin-bottom: 30px;
-    color: rgb(2, 2, 2);
+    color: #ff6347;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -25,14 +25,14 @@
     width: 100%;
     gap: 20px;
     padding: 20px;
-    background-color:rgba(253, 253, 253, 0.476);
+    background-color:#5f86b05f;
     border-radius: 10px;
     
 }
 
 .text-style {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:rgb(0, 0, 0);
+    color:rgb(227, 214, 129);
     font-size: 1.0rem;
     line-height: 1.6;
     text-align: left;

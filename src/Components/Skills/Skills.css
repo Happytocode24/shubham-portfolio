@@ -1,5 +1,5 @@
 .skills-container {
-    background-color: rgb(255, 201, 142);
+    /* background-color: rgb(255, 201, 142); */
     color: black;
     overflow: hidden;
     position: relative;
@@ -16,7 +16,7 @@
     font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 30px;
-    color: rgb(2, 2, 2);
+    color: #ff6347;
     font-family: 'Trebuchet MS', Arial, sans-serif;
     z-index: 1;
     align-self: flex-start;
