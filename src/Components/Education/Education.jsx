@@ -3,30 +3,41 @@ import React, { useState, useRef, useCallback } from 'react';
 import { useWheel, useDrag } from '@use-gesture/react';
 import bitslogo from '../logos/BITS-logo.png';
 import rgpvLogo from '../logos/rgpv.svg';
+import maharashi from '../logos/maharashi-vidhya-mandir.png'
 
 const education = [
   { logo: bitslogo, title: "Birla Institute of Technology and Science Pilani", description: "MTech in Computer Science" },
   { logo: rgpvLogo, title: "Rajiv Gandhi Proudyogiki Vishwavidyalaya", description: "BTech Computer Science Engineering" },
+  { logo: maharashi, title: "Maharashi Vidhya Mandir Rewa M.P ", description: "12th Standard" },
 ];
 
 const Education = React.forwardRef((props, ref) => {
   const [index, setIndex] = useState(0);
   const educationLength = education.length;
   const containerRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const handleScroll = useCallback(({ delta: [, deltaY] }) => {
+    if (timeoutRef.current) return;
     if (deltaY > 0 && index < educationLength - 1) {
       setIndex((prevIndex) => prevIndex + 1);
     } else if (deltaY < 0 && index > 0) {
       setIndex((prevIndex) => prevIndex - 1);
     }
+    timeoutRef.current = setTimeout(() => {
+      timeoutRef.current = null;
+    }, 500); 
   }, [index, educationLength]);
 
   const handleDrag = useCallback(({ movement: [, my], memo = index }) => {
+    if (timeoutRef.current) return;
     const newIndex = memo - Math.sign(my);
     if (newIndex >= 0 && newIndex < educationLength) {
       setIndex(newIndex);
     }
+    timeoutRef.current = setTimeout(() => {
+      timeoutRef.current = null;
+    }, 500); 
     return memo;
   }, [index, educationLength]);
 

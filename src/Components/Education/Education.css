@@ -1,5 +1,4 @@
 .education-container {
-  /* background-image: url('../logos/BITS-Background.jpg'); */
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -15,18 +14,18 @@
 .education-title {
   font-size: 3.5rem;
   font-weight: bold;
-    align-self: flex-start;
+  align-self: flex-start;
   margin-bottom: 30px;
   color: #ff6347;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
 .education-list {
   position: relative;
   width: 100%;
   height: 500px;
-  perspective: 1000px; /* Add perspective for stack effect */
-  overflow: hidden; /* Hide overflowing cards */
+  perspective: 1000px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,17 +42,16 @@
   pointer-events: none;
   width: 100%;
   max-width: 600px;
-  height: auto; 
+  height: auto;
   z-index: 1;
 }
 
 .education-item.active {
   transform: translate(-50%, -50%) scale(1);
-  opacity: 10;
+  opacity: 1;
   pointer-events: auto;
-  z-index: 3; /* Bring the active card to the front */
+  z-index: 3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
- 
 }
 
 .education-item.above {
@@ -64,7 +62,7 @@
 
 .education-item.below {
   transform: translate(-50%, calc(150% + 50px)) scale(0.9);
-  opacity: 0.1;
+  opacity: 0.5;
   z-index: 1;
 }
 
@@ -93,47 +91,47 @@
 
 .college-title {
   font-weight: bold;
-    margin: 0;
+  margin: 0;
   font-size: 1.5rem;
   color: white;
 }
 
-.degree-description{
+.degree-description {
   color: white;
 }
+
 .education-item p {
-    margin: 0;
-    font-size: 1.0rem;
-    font-weight:normal;
-    align-items: center;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  align-items: center;
 }
 
-  @media (max-width: 1000px) {
-    .education-card {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    .logo-title-container {
-      gap: 10px;
-    }
-  
-    .education-logo {
-      width: 50px;
-      height: 50px;
-      object-fit: contain;
-    }
-  
-    .college-title {
-      font-size: 1.0rem;
-    }
-  
-    .education-item p {
-      font-size: 0.8rem;
-    }
-
-    .education-title {
-      font-size: 2.5rem;
-    }
-
+@media (max-width: 1000px) {
+  .education-card {
+    width: 100%;
+    padding: 10px;
   }
+
+  .logo-title-container {
+    gap: 10px;
+  }
+
+  .education-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .college-title {
+    font-size: 1rem;
+  }
+
+  .education-item p {
+    font-size: 0.8rem;
+  }
+
+  .education-title {
+    font-size: 2.5rem;
+  }
+}

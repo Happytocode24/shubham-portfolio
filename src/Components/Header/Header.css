@@ -81,7 +81,7 @@
   overflow: hidden;
   white-space: nowrap;
   font-size: 6rem;
-  animation: typing 3s steps(20, end), blink 0.5s step-end infinite;
+  animation: typing 1.0s steps(20, end), blink 0.5s step-end infinite;
   color: #ff6347;
 }
 
