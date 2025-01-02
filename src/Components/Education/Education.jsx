@@ -37,7 +37,7 @@ const Education = React.forwardRef((props, ref) => {
     }
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 500);
+    }, 300);
     return memo;
   }, [index, educationLength]);
 
