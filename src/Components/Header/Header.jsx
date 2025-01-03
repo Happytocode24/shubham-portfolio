@@ -36,8 +36,6 @@ export default function Header({ scrollToAbout, scrollToEducation, scrollToConta
                     <button className="header-button" onClick={scrollToContact}>CONTACT</button>
                 </div>
             </li>
-
-            {/* Intro Section */}
             <div className="intro-container">
                 <div className="text-container">
                     <span className="intro-welcome">Welcome!</span><br />

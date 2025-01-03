@@ -42,7 +42,7 @@ const Experience = React.forwardRef((props, ref) => {
 
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 500);  // Adjust the timeout duration as needed
+    }, 500); 
   }, [index]);
 
   const handleDrag = useCallback(({ movement: [_, my], memo = index }) => {
@@ -53,7 +53,7 @@ const Experience = React.forwardRef((props, ref) => {
     }
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-    }, 500);  // Adjust the timeout duration as needed
+    }, 500); 
     return memo;
   }, [index]);
 
