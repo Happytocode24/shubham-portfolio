@@ -1,45 +1,64 @@
+import { useState } from 'react';
 import './Header.css';
+import Sidebar from  '../Sidebar/Sidebar.jsx'
 import githubLogo from '../logos/github.png';
 import linkedInLogo from '../logos/linkedin.png';
 
-export default function Header({scrollToAbout,scrollToEducation,
-    scrollToContact,scrollToExperience,scrollToSkills
-}){
+export default function Header({ scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!isSidebarOpen);
+    };
+
     return (
-        <div className='header-container'>
+        <div className="header-container">
+            {/* Sidebar */}
+            <Sidebar 
+                isOpen={isSidebarOpen} 
+                toggleSidebar={toggleSidebar}
+                scrollToAbout={scrollToAbout}
+                scrollToExperience={scrollToExperience}
+                scrollToSkills={scrollToSkills}
+                scrollToEducation={scrollToEducation}
+                scrollToContact={scrollToContact}
+            />
             <li className="header">
                 <p className="name">SHUBHAM MISHRA</p>
+                <button className="menu-btn" onClick={toggleSidebar}>&#9776;</button>
+
                 <div className="header-button-container">
-                    <button  className='header-button' onClick={scrollToAbout}>ABOUT</button>
-                    <button  className='header-button' onClick={scrollToExperience}>EXPERIENCE</button>
-                    <button className='header-button'onClick={scrollToSkills}>SKILLS</button>
-                    <button className='header-button' onClick={scrollToEducation}>EDUCATION</button>
-                    <button className='header-button' >PROJECT</button>
-                    <button className='header-button' onClick={scrollToContact}>CONTACT</button>
+                    <button className="header-button" onClick={scrollToAbout}>ABOUT</button>
+                    <button className="header-button" onClick={scrollToExperience}>EXPERIENCE</button>
+                    <button className="header-button" onClick={scrollToSkills}>SKILLS</button>
+                    <button className="header-button" onClick={scrollToEducation}>EDUCATION</button>
+                    <button className="header-button">PROJECT</button>
+                    <button className="header-button" onClick={scrollToContact}>CONTACT</button>
                 </div>
             </li>
-            <div className='intro-container'>
 
-                <div className='text-container'>
-                    <span className="intro-welcome">Welcome !</span><br />
-                    <div className= 'header-intro'>
-                    <span>This is </span>
-                    <span className="intro-profession">Shubham Mishra,</span><br />
-                    <span>A professional</span><br />
-                    <span className="intro-profession">Software Engineer.</span>
+            {/* Intro Section */}
+            <div className="intro-container">
+                <div className="text-container">
+                    <span className="intro-welcome">Welcome!</span><br />
+                    <div className="header-intro">
+                        <span>This is </span>
+                        <span className="intro-profession">Shubham Mishra,</span><br />
+                        <span>A professional</span><br />
+                        <span className="intro-profession">Software Engineer.</span>
                     </div>
-                    <div className='custom-button-container'>
-                        <a href={require('../resume.pdf')} download> 
-                        <button className='custom-button'>
-                        Get Resume
-                        <span className="material-icons icon-small" style={{ marginLeft: '8px' }}>file_download</span>
-                        </button>
+                    <div className="custom-button-container">
+                        <a href={require('../resume.pdf')} download>
+                            <button className="custom-button">
+                                Get Resume
+                                <span className="material-icons icon-small" style={{ marginLeft: '8px' }}>file_download</span>
+                            </button>
                         </a>
-                        <button className='custom-button' onClick={scrollToContact}>Contact Me</button>
+                        <button className="custom-button" onClick={scrollToContact}>Contact Me</button>
                     </div>
                 </div>
 
-                <div className='image-container'>
+                <div className="image-container">
                     <img src={require('../IMG_8536.jpg')} alt="Shubham Mishra" className="profile-picture" />
                     <div className="header-social-links">
                         <div className="header-contact-item">
@@ -54,7 +73,6 @@ export default function Header({scrollToAbout,scrollToEducation,
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

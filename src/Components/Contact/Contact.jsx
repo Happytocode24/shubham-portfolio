@@ -30,10 +30,10 @@ const Contact = React.forwardRef((props, ref) => {
 
     // Construct the data to match the EmailJS template placeholders
     const emailData = {
-      to_name: 'Shubham Mishra',        // Set your name or any other recipient detail
-      from_name: name,             // From the form's name field
-      email: email,                // Sender's email from the form
-      message: message             // Message content from the form
+      to_name: 'Shubham Mishra',  // Set your name or any other recipient detail
+      from_name: name,            // From the form's name field
+      email: email,               // Sender's email from the form
+      message: message            // Message content from the form
     };
 
     // Use EmailJS to send the message
@@ -49,9 +49,10 @@ const Contact = React.forwardRef((props, ref) => {
 
   return (
     <div className="contact-container" ref={ref}>
-      <h1 className="contact-title ">Contact</h1>
+      <h1 className="contact-title">Contact</h1>
       <div className="contact-wrapper">
         <div className="contact-card">
+          <p className="additional-text">If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests.</p>
           <form onSubmit={handleSubmit} className="contact-form">
             <input 
               type="text" 
@@ -82,25 +83,25 @@ const Contact = React.forwardRef((props, ref) => {
         </div>
         <div className="contact-info">
           <div className="contact-item">
-          <img src= {callLogo} alt="GitHub" className="contact-logo" />
+            <img src={callLogo} alt="Phone" className="contact-logo" />
             <span className="contact-text">+918224999659</span>
           </div>
           <div className="contact-item">
-          <img src= {mailLogo} alt="GitHub" className="contact-logo" />
+            <img src={mailLogo} alt="Email" className="contact-logo" />
             <span className="contact-text">shubhambitspilani@yahoo.com</span>
           </div>
           <div className="social-links">
-    <div className="contact-item">
-      <a href="https://github.com/Happytocode24" target="_blank" rel="noopener noreferrer">
-        <img src={githubLogo} alt="GitHub" className="social-media-logo" />
-      </a>
-    </div>
-    <div className="contact-item">
-      <a href="https://www.linkedin.com/in/shubham-mishra-669726154/" target="_blank" rel="noopener noreferrer">
-        <img src={linkedInLogo} alt="LinkedIn" className="social-media-logo" />
-      </a>
-    </div>
-  </div>
+            <div className="contact-item">
+              <a href="https://github.com/Happytocode24" target="_blank" rel="noopener noreferrer">
+                <img src={githubLogo} alt="GitHub" className="social-media-logo" />
+              </a>
+            </div>
+            <div className="contact-item">
+              <a href="https://www.linkedin.com/in/shubham-mishra-669726154/" target="_blank" rel="noopener noreferrer">
+                <img src={linkedInLogo} alt="LinkedIn" className="social-media-logo" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <ToastContainer />

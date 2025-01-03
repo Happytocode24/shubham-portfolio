@@ -31,8 +31,10 @@
 }
 
 .text-style {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:rgb(227, 214, 129);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+    'Lucida Grande', 'Lucida Sans',
+     Arial, sans-serif;
+    color: rgb(238, 227, 227);
     font-size: 1.0rem;
     line-height: 1.6;
     text-align: left;
@@ -49,5 +51,10 @@
 
     .about-title {
         font-size: 2.5rem;
+    }
+
+    .text-style {
+        font-size: 0.7rem;
+        line-height: 1.0;
     }
 }

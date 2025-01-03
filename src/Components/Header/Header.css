@@ -68,6 +68,9 @@
   margin-right: 50px;
   width: 550px;
   height: 550px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+  'Lucida Grande', 'Lucida Sans',
+   Arial, sans-serif;
 }
 
 .image-container {
@@ -83,10 +86,22 @@
   font-size: 6rem;
   animation: typing 1.0s steps(20, end), blink 0.5s step-end infinite;
   color: #ff6347;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+  'Lucida Grande', 'Lucida Sans',
+   Arial, sans-serif;
 }
 
 .header-intro {
   font-size: 2.6rem;
+}
+
+.menu-btn {
+  font-size: 2rem;
+  color: #ff6347;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
 }
 
 @keyframes typing {
@@ -209,7 +224,10 @@
     align-items:flex-end;
     text-align:left
    
-  }
+}
+.menu-btn {
+  display: block;
+}
 
   .intro-container {
     margin: 0;
