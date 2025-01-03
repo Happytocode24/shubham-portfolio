@@ -220,7 +220,7 @@
   }
 
   .name {
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     align-items:flex-end;
     text-align:left
    
@@ -315,7 +315,7 @@
   }
 
   .name {
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     align-items: center;
     text-align: center;
     margin: 0 auto;
