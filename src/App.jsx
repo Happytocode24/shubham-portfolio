@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="app-container" style={{ backgroundColor: isDarkMode ? "rgb(5, 5, 60)" : "rgb(55, 55, 121)" }}>
+    <div className="app-container" style={{ backgroundColor: isDarkMode ? "rgb(0, 0, 0)" : "rgb(55, 55, 121)" }}>
       <div className='switch-container'>
       <label className="switch">
         <input type="checkbox" checked={!isDarkMode} onChange={toggleDarkMode} />
