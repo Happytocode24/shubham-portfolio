@@ -7,6 +7,7 @@ import githubLogo from '../logos/social.png';
 import linkedInLogo from '../logos/LinkedIn2.png';
 import mailLogo from '../logos/mail.png';
 import callLogo from '../logos/phone-call.png';
+import sendLogo from '../logos/icons8-send-64.png'
 
 const Contact = React.forwardRef((props, ref) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -78,7 +79,10 @@ const Contact = React.forwardRef((props, ref) => {
               onChange={handleChange} 
             />
             {error && <p className="error-message">{error}</p>}
-            <button type="submit" className="send-button">Send Message</button>
+            <button type="submit" className="send-button">
+              Send Message
+              <img src={sendLogo} className="icon-small" />
+            </button>
           </form>
         </div>
         <div className="contact-info">

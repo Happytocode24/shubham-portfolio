@@ -3,6 +3,8 @@ import './Header.css';
 import Sidebar from  '../Sidebar/Sidebar.jsx'
 import githubLogo from '../logos/icons8-github.svg';
 import linkedInLogo from '../logos/icons8-linkedin.svg';
+import downloadLog from '../logos/icons8-download-26.png';
+import contactLogo from '../logos/icons8-contact-50.png'
 
 export default function Header({ scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -49,10 +51,13 @@ export default function Header({ scrollToAbout, scrollToEducation, scrollToConta
                         <a href={require('../resume.pdf')} download>
                             <button className="custom-button">
                                 Get Resume
-                                <span className="material-icons icon-small" style={{ marginLeft: '8px' }}>file_download</span>
+                                <img src={downloadLog} className="icon-small" />
                             </button>
                         </a>
-                        <button className="custom-button" onClick={scrollToContact}>Contact Me</button>
+                        <button className="custom-button" onClick={scrollToContact}>
+                            Contact Me
+                            <img src={contactLogo} className="icon-small" />
+                            </button>
                     </div>
                 </div>
 
