@@ -6,7 +6,7 @@
   max-width: 700px;
   min-width: auto;
   min-height: 150px;
-  background-color: rgb(62, 103, 143);
+  background-color: #5f86b05f;
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow: hidden;
@@ -47,14 +47,14 @@
   .experience-card {
     border-radius: 8px;
     color: white;
-    font-size:medium;
+    font-size:small;
     padding: 15px;
   }
 }
 
 @media (max-width: 600px) {
   .experience-card {
-    font-size: medium;
+    font-size:smaller;
     padding: 10px;
   }
 }
