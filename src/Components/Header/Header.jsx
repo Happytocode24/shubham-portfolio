@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './Header.css';
 import Sidebar from  '../Sidebar/Sidebar.jsx'
-import githubLogo from '../logos/github.png';
-import linkedInLogo from '../logos/linkedin.png';
+import githubLogo from '../logos/icons8-github.svg';
+import linkedInLogo from '../logos/icons8-linkedin.svg';
 
 export default function Header({ scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
     const [isSidebarOpen, setSidebarOpen] = useState(false);

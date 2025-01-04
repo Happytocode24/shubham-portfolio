@@ -1,3 +1,4 @@
+
 .app-container {
   background-size: cover;
   background-position: center;
@@ -5,7 +6,76 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color:rgb(5, 5, 60);
+}
+
+.switch-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.switch {
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(55, 55, 121);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ff6347;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(5, 5, 60);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 10px #ff6347;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .footer-text {
@@ -27,5 +97,20 @@
 }
 
 .footer-text .highlight-name {
-  color: #ff7870dc; /* Adjust this color as needed */
+  color: #ff6347; /* Adjust this color as needed */
+}
+
+@media (max-width: 1000px) {
+  .switch {
+    width: 48px;
+    height: 19px;
+    
+  }
+
+  .slider:before {
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 2px;
+  }
 }
