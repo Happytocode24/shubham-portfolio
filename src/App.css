@@ -113,4 +113,9 @@ input:checked + .slider:before {
     left: 4px;
     bottom: 2px;
   }
+
+  .footer-text {
+    font-size: 0.8rem;
+
+  }
 }
