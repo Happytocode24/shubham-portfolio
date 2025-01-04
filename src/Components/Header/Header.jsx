@@ -51,12 +51,12 @@ export default function Header({ scrollToAbout, scrollToEducation, scrollToConta
                         <a href={require('../resume.pdf')} download>
                             <button className="custom-button">
                                 Get Resume
-                                <img src={downloadLog} className="icon-small" />
+                                <img src={downloadLog} alt="ResumeDownload"className="icon-small" />
                             </button>
                         </a>
                         <button className="custom-button" onClick={scrollToContact}>
                             Contact Me
-                            <img src={contactLogo} className="icon-small" />
+                            <img src={contactLogo} alt="Contact" className="icon-small" />
                             </button>
                     </div>
                 </div>

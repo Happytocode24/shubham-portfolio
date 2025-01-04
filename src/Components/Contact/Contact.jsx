@@ -81,7 +81,7 @@ const Contact = React.forwardRef((props, ref) => {
             {error && <p className="error-message">{error}</p>}
             <button type="submit" className="send-button">
               Send Message
-              <img src={sendLogo} className="icon-small" />
+              <img src={sendLogo} alt="Message" className="icon-small" />
             </button>
           </form>
         </div>
