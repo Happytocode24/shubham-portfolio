@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="app-container" style={{ backgroundColor: isDarkMode ? "rgb(0, 0, 0)" : "rgb(55, 55, 121)" }}>
+    <div className="app-container" style={{ backgroundColor: isDarkMode ? "rgb(0, 0, 0)" : "rgb(213, 213, 218)" }}>
       <div className='switch-container'>
       <label className="switch">
         <input type="checkbox" checked={!isDarkMode} onChange={toggleDarkMode} />
@@ -35,15 +35,17 @@ function App() {
       </label>
       </div>
       <Header
+      isDarkMode={isDarkMode}
         scrollToAbout={scrollToAbout}
         scrollToEducation={scrollToEducation}
         scrollToContact={scrollToContact}
         scrollToExperience={scrollToExperience}
         scrollToSkills={scrollToSkills}
+
       />
 
-      <About ref={aboutRef} />
-      <Experience ref={experienceRef} />
+      <About isDarkMode={isDarkMode}ref={aboutRef} />
+      <Experience isDarkMode={isDarkMode} ref={experienceRef} />
       <Skills ref={skillsRef} />
       <Education ref={educationRef} />
       <Contact ref={contactRef} />

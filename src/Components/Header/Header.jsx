@@ -5,8 +5,10 @@ import githubLogo from '../logos/icons8-github.svg';
 import linkedInLogo from '../logos/icons8-linkedin.svg';
 import downloadLog from '../logos/icons8-download-26.png';
 import contactLogo from '../logos/icons8-contact-50.png'
+import githubLogoLight from '../logos/githubLight.svg'
+import linkedInLogoLight from '../logos/LinkedInLight.svg'
 
-export default function Header({ scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
+export default function Header({ isDarkMode, scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
 
     const toggleSidebar = () => {
@@ -26,35 +28,35 @@ export default function Header({ scrollToAbout, scrollToEducation, scrollToConta
                 scrollToContact={scrollToContact}
             />
             <li className="header">
-                <p className="name">SHUBHAM MISHRA</p>
-                <button className="menu-btn" onClick={toggleSidebar}>&#9776;</button>
+                <p className={isDarkMode?"name":'name-light'}>SHUBHAM MISHRA</p>
+                <button className={isDarkMode?"menu-btn":"menu-btn-light"} onClick={toggleSidebar}>&#9776;</button>
 
                 <div className="header-button-container">
-                    <button className="header-button" onClick={scrollToAbout}>ABOUT</button>
-                    <button className="header-button" onClick={scrollToExperience}>EXPERIENCE</button>
-                    <button className="header-button" onClick={scrollToSkills}>SKILLS</button>
-                    <button className="header-button" onClick={scrollToEducation}>EDUCATION</button>
-                    <button className="header-button">PROJECT</button>
-                    <button className="header-button" onClick={scrollToContact}>CONTACT</button>
+                    <button className={isDarkMode?"header-button":'header-button-light'} onClick={scrollToAbout}>ABOUT</button>
+                    <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToExperience}>EXPERIENCE</button>
+                    <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToSkills}>SKILLS</button>
+                    <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToEducation}>EDUCATION</button>
+                    <button className={isDarkMode?"header-button":'header-button-light'} >PROJECT</button>
+                    <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToContact}>CONTACT</button>
                 </div>
             </li>
-            <div className="intro-container">
+            <div className={isDarkMode?"intro-container":"intro-container-light"}>
                 <div className="text-container">
-                    <span className="intro-welcome">Welcome!</span><br />
+                    <span className={isDarkMode?"intro-welcome":"intro-welcome-light"}>Welcome!</span><br />
                     <div className="header-intro">
                         <span>This is </span>
-                        <span className="intro-profession">Shubham Mishra,</span><br />
+                        <span className={isDarkMode?"intro-profession":"intro-profession-light"}>Shubham Mishra,</span><br />
                         <span>A professional</span><br />
-                        <span className="intro-profession">Software Engineer.</span>
+                        <span className={isDarkMode?"intro-profession":"intro-profession-light"}>Software Engineer.</span>
                     </div>
                     <div className="custom-button-container">
                         <a href={require('../resume.pdf')} download>
-                            <button className="custom-button">
+                            <button className={isDarkMode?"custom-button":"custom-button-light" }>
                                 Get Resume
                                 <img src={downloadLog} alt="ResumeDownload"className="icon-small" />
                             </button>
                         </a>
-                        <button className="custom-button" onClick={scrollToContact}>
+                        <button className={isDarkMode?"custom-button":"custom-button-light" }onClick={scrollToContact}>
                             Contact Me
                             <img src={contactLogo} alt="Contact" className="icon-small" />
                             </button>
@@ -62,16 +64,19 @@ export default function Header({ scrollToAbout, scrollToEducation, scrollToConta
                 </div>
 
                 <div className="image-container">
-                    <img src={require('../IMG_8536.jpg')} alt="Shubham Mishra" className="profile-picture" />
+                    <img src={require('../IMG_8536.jpg')} alt="Shubham Mishra" 
+                    className={isDarkMode?"profile-picture":"profile-picture-light"}
+                    
+                    />
                     <div className="header-social-links">
                         <div className="header-contact-item">
                             <a href="https://github.com/Happytocode24" target="_blank" rel="noopener noreferrer">
-                                <img src={githubLogo} alt="GitHub" className="header-social-media-logo" />
+                                <img src={isDarkMode?githubLogo:githubLogoLight} alt="GitHub" className="header-social-media-logo" />
                             </a>
                         </div>
                         <div className="header-contact-item">
                             <a href="https://www.linkedin.com/in/shubham-mishra-669726154/" target="_blank" rel="noopener noreferrer">
-                                <img src={linkedInLogo} alt="LinkedIn" className="header-social-media-logo" />
+                                <img src={isDarkMode?linkedInLogo:linkedInLogoLight} alt="LinkedIn" className="header-social-media-logo" />
                             </a>
                         </div>
                     </div>

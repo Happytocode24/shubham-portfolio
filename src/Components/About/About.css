@@ -19,6 +19,15 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.about-title-light{
+    font-size: 3.5rem;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 30px;
+    color: #359f8d;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .about-content {
     display: flex;
     max-width: 800px;
@@ -26,6 +35,17 @@
     gap: 20px;
     padding: 20px;
     background-color:#5f86b05f;
+    border-radius: 10px;
+    
+}
+
+.about-content-light {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    background-color:#71787e5f;
     border-radius: 10px;
     
 }
@@ -42,7 +62,23 @@
     
 }
 
+.text-style-light {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+    'Lucida Grande', 'Lucida Sans',
+     Arial, sans-serif;
+    color: rgb(22, 22, 22);
+    font-size: 1.0rem;
+    line-height: 1.6;
+    text-align: left;
+    font-weight: bold;
+    
+}
+
 .text-style p {
+    margin-bottom: 15px;
+}
+
+.text-style-light p {
     margin-bottom: 15px;
 }
 
@@ -53,7 +89,16 @@
         font-size: 2.5rem;
     }
 
+    .about-title-light {
+        font-size: 2.5rem;
+    }
+
     .text-style {
+        font-size: 0.7rem;
+        line-height: 1.0;
+    }
+
+    .text-style-light {
         font-size: 0.7rem;
         line-height: 1.0;
     }

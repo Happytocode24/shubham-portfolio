@@ -1,9 +1,9 @@
 import React from 'react';
 import './ExperienceCard.css';
 
-const ExperienceCard = ({ work }) => {
+const ExperienceCard = ({ isDarkMode,work }) => {
   return (
-    <div className="experience-card">
+    <div className={isDarkMode?"experience-card":"experience-card-light"}>
       <pre className="experience-details">
         <span className="const-color">const</span> work <span className="equal-color">=</span> {'{\n'}
         &nbsp;&nbsp;<span className="braces-color">Organisation:</span> <span className="value-color">'{work.Organisation}'</span>,{'\n'}

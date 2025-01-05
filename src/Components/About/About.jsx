@@ -1,13 +1,13 @@
 import './About.css';
 import React from 'react';
 
-const About = React.forwardRef((props, ref) => {
+const About = React.forwardRef(( {isDarkMode}, ref) => {
   
   return (
     <div className="about-container" ref={ref}>
-      <h1 className="about-title">About Me !</h1>
-      <div className="about-content">
-        <div className="text-style">
+      <h1 className={isDarkMode?"about-title":"about-title-light"}>About Me !</h1>
+      <div className={isDarkMode?"about-content":"about-content-light"}>
+        <div className={isDarkMode?"text-style":"text-style-light"}>
           <p>I am a dedicated and diligent Software Engineer with a strong expertise in web development.</p>
           <p>Currently, I work at Cisco, where I design, develop, and maintain full-stack applications that power our company's products.</p>
           <p>My technical skills include JavaScript, Python, React.js, Angular, SQL, Machine Learning, and Artificial Intelligence.</p>

@@ -6,7 +6,25 @@
   max-width: 700px;
   min-width: auto;
   min-height: 150px;
-  background-color: #5f86b05f;
+  background-color: #5f86b05f;  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size:large;
+}
+
+
+.experience-card-light {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 700px;
+  min-width: auto;
+  min-height: 150px;
+  background-color: #71787e5f;  
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow: hidden;

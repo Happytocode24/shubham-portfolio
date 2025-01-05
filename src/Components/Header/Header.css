@@ -27,6 +27,13 @@
   color: white;
 }
 
+.name-light {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+}
+
 .header-button-container {
   display: flex;
   gap: 30px;
@@ -45,18 +52,52 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.header-button-light {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+  background-color: transparent;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
 .header-button:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
   color: #ff6347;
 }
 
+.header-button-light:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  color: #359f8d;
+}
+
 .header-button:active {
+  transform: scale(0.98);
+}
+
+.header-button-light:active {
   transform: scale(0.98);
 }
 
 .intro-container {
   color: whitesmoke;
+  margin-top: 50px;
+  margin-left: 100px;
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+.intro-container-light {
+  color: black;
   margin-top: 50px;
   margin-left: 100px;
   font-weight: 700;
@@ -93,6 +134,18 @@
    Arial, sans-serif;
 }
 
+.intro-welcome-light {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 6rem;
+  animation: typing 1.0s steps(20, end), blink 0.5s step-end infinite;
+  color:  #359f8d;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+  'Lucida Grande', 'Lucida Sans',
+   Arial, sans-serif;
+}
+
 .header-intro {
   font-size: 2.6rem;
 }
@@ -100,6 +153,15 @@
 .menu-btn {
   font-size: 2rem;
   color: #ff6347;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn-light {
+  font-size: 2rem;
+  color: #359f8d;
   background: none;
   border: none;
   cursor: pointer;
@@ -123,6 +185,10 @@
 
 .intro-profession {
   color: #208fff;
+}
+
+.intro-profession-light {
+  color: #5191c9;
 }
 
 .custom-button-container {
@@ -161,6 +227,25 @@
   height: 40px;
 }
 
+.custom-button-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  color: #ffffff;
+  background: linear-gradient(270deg, #359f8d, #0b0866);
+  background-size: 200% 200%;
+  border: 2px solid #359f8d;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, background-position 0.5s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  height: 40px;
+}
+
 .custom-button:hover {
   background-position: 100% 0;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
@@ -168,7 +253,20 @@
   color: #ffffff;
 }
 
+.custom-button-light:hover {
+  background-position: 100% 0;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
 .custom-button:active {
+  background-position: 100% 50%;
+  transform: scale(0.98);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button-light:active {
   background-position: 100% 50%;
   transform: scale(0.98);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -186,6 +284,16 @@ a {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-left: 0;
   border: 2px solid #ff6347;
+}
+
+.profile-picture-light {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 0;
+  border: 2px solid #359f8d;
 }
 
 .icon-small {
@@ -235,11 +343,27 @@ a {
     text-align:left
    
 }
+.name-light {
+  font-size: 1.0rem;
+  align-items:flex-end;
+  text-align:left
+ 
+}
 .menu-btn {
+  display: block;
+}
+.menu-btn-light {
   display: block;
 }
 
   .intro-container {
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-container-light {
     margin: 0;
     flex-direction: row;
     align-items: center;
@@ -257,9 +381,17 @@ a {
     font-size: 3rem;
   }
 
+  .intro-welcome-light {
+    font-size: 3rem;
+  }
+
   .intro-profession {
     font-size: 1.3rem;
   }
+  .intro-profession-light {
+    font-size: 1.3rem;
+  }
+
 
   .custom-button-container {
     flex-direction: row; /* Set direction to row */
@@ -275,8 +407,23 @@ a {
     min-width: 100px;
     height: 25px;
   }
+
+  .custom-button-light {
+    padding: 7px 11px;
+    font-size: 0.8rem;
+    min-width: 100px;
+    height: 25px;
+  }
   
   .profile-picture {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+  }
+
+  .profile-picture-light {
     width: 180px;
     height: 180px;
     margin-top: 10px;
@@ -311,7 +458,20 @@ a {
     text-align: center;
   }
 
+  .intro-container-light {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .profile-picture {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+  }
+
+  .profile-picture-light {
     width: 180px;
     height: 180px;
     margin-top: 10px;
@@ -329,8 +489,20 @@ a {
     min-width: 60px;
     height: 25px;
   }
-
+  .custom-button-light {
+    padding: 6px 12px;
+    font-size: 0.5rem;
+    min-width: 60px;
+    height: 25px;
+  }
   .name {
+    font-size: 1.0rem;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .name-light {
     font-size: 1.0rem;
     align-items: center;
     text-align: center;

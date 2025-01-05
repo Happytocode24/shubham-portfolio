@@ -26,7 +26,7 @@ const experiences = [
   },
 ];
 
-const Experience = React.forwardRef((props, ref) => {
+const Experience = React.forwardRef(({isDarkMode}, ref) => {
   const [index, setIndex] = useState(0);
   const containerRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -69,7 +69,7 @@ const Experience = React.forwardRef((props, ref) => {
 
   return (
     <div className="experience-container" ref={ref}>
-      <h1 className="experience-header-title">Experience</h1>
+      <h1 className={isDarkMode?"experience-header-title":"experience-header-title-light"}>Experience</h1>
       <div className="experience-list" ref={containerRef} {...bindWheel()} {...bindDrag()}>
         {experiences.map((exp, i) => (
           <div
@@ -78,8 +78,8 @@ const Experience = React.forwardRef((props, ref) => {
               i === index ? "active" : i < index ? "above" : "below"
             }`}
           >
-            <h2 className="experience-title">{exp.title}</h2>
-            <ExperienceCard work={exp.work} />
+            <h2 className={isDarkMode?"experience-title":"experience-title-light"}>{exp.title}</h2>
+            <ExperienceCard isDarkMode={isDarkMode} work={exp.work} />
           </div>
         ))}
       </div>

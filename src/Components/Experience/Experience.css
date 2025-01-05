@@ -1,5 +1,4 @@
 .experience-container {
-  /* background-image: url('../ExperienceBackground.png'); */
   background-attachment: fixed;
   padding: 40px;
   display: flex;
@@ -19,6 +18,16 @@
   color: #ff6347;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.experience-header-title-light {
+  font-size: 3.5rem;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-bottom: 30px;
+  color: #359f8d;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 
 .experience-list {
   position: relative;
@@ -77,10 +86,22 @@
      Arial, sans-serif;
 }
 
+.experience-title-light {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #359f8d;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+    'Lucida Grande', 'Lucida Sans',
+     Arial, sans-serif;
+}
 
 
 @media (max-width: 1000px) {
   .experience-header-title {
+    font-size: 2.5rem;
+  }
+
+  .experience-header-title-light {
     font-size: 2.5rem;
   }
 
@@ -90,6 +111,10 @@
   }
 
   .experience-title {
+    font-size: 1.2rem;
+  }
+
+  .experience-title-light {
     font-size: 1.2rem;
   }
 
@@ -108,6 +133,9 @@
     font-size: 2.5rem;
   }
 
+  .experience-header-title-light {
+    font-size: 2.5rem;
+  }
 
   .experience-list {
     height: 300px;
@@ -117,6 +145,9 @@
     font-size: 1.2rem;
   }
 
+  .experience-title-light {
+    font-size: 1.2rem;
+  }
   .experience-item.active {
     transform: translate(-50%, -50%) scale(0.9);
   }
