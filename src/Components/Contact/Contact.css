@@ -243,6 +243,10 @@
     .contact-info {
         width: 100%;
     }
+    .contact-card-light,
+    .contact-info {
+        width: 100%;
+    }
 
     .contact-title {
         font-size: 2.5rem;
