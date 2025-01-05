@@ -22,6 +22,16 @@
     align-self: flex-start;
 }
 
+.skills-title-light {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #359f8d;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    z-index: 1;
+    align-self: flex-start;
+}
+
 .skills-carousel {
     display: flex;
     gap: 20px;
@@ -46,12 +56,30 @@
 
 }
 
+.skill-card-light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    background: rgb(126, 131, 134);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
+}
+
 .skill-card:hover {
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
     border: 2px solid #ff6347;
 }
 
+.skill-card-light:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 2px solid #5eec89;
+}
 
 .skill-logo {
     width: 40px;
@@ -61,7 +89,12 @@
 
 .skill-name {
     font-size: 1rem;
-    color: #e8dede;
+    color: white;
+}
+
+.skill-name-light {
+    font-size: 1rem;
+    color: #0e0c0c;
 }
 
 .scroll-button {
@@ -97,13 +130,27 @@
     .skills-title{
         font-size: 2.5rem;
     }
+
+    .skills-title-light{
+        font-size: 2.5rem;
+    }
+
     .skill-card {
      width: 80px;  
      }
 
+    .skill-card-light {
+        width: 80px;  
+        }
+   
      .skill-name {
         font-size: 0.8rem;
-        color: #333;
+        color: white;
+    }
+
+    .skill-name-light {
+        font-size: 0.8rem;
+        color:  #0e0c0c;
     }
 
     .skill-logo {

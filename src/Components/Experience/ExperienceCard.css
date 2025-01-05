@@ -49,22 +49,57 @@
   color: rgb(237, 91, 115);
 }
 
+.const-color-light {
+  color: rgb(191, 68, 11);
+}
+
 .equal-color {
   color: rgb(237, 91, 115);
 }
 
+.equal-color-light {
+  color: rgb(191, 68, 11);
+}
+
 .braces-color {
   color: yellow;
+ 
+}
+
+.curlly-braces{
+  color: rgb(234, 11, 204);
+}
+
+.braces-color-light {
+  color: rgb(2, 143, 35);
+  font-weight: bolder;
 }
 
 .value-color {
   color: orange;
 }
 
+.work-light{
+  color: black;
+}
+
+.work-Dark{
+  color: white;
+}
+
+.value-color-light {
+  color: rgb(14, 11, 183);
+}
+
+
 @media (max-width: 1000px) {
   .experience-card {
+    font-size:small;
+    padding: 15px;
+  }
+
+  .experience-card-light {
     border-radius: 8px;
-    color: white;
     font-size:small;
     padding: 15px;
   }
@@ -72,6 +107,11 @@
 
 @media (max-width: 600px) {
   .experience-card {
+    font-size:smaller;
+    padding: 10px;
+  }
+
+  .experience-card-light {
     font-size:smaller;
     padding: 10px;
   }

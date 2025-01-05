@@ -5,19 +5,25 @@ const ExperienceCard = ({ isDarkMode,work }) => {
   return (
     <div className={isDarkMode?"experience-card":"experience-card-light"}>
       <pre className="experience-details">
-        <span className="const-color">const</span> work <span className="equal-color">=</span> {'{\n'}
-        &nbsp;&nbsp;<span className="braces-color">Organisation:</span> <span className="value-color">'{work.Organisation}'</span>,{'\n'}
-        &nbsp;&nbsp;<span className="braces-color">Location:</span> <span className="value-color">'{work.Location}'</span>,{'\n'}
-        &nbsp;&nbsp;<span className="braces-color">projectName:</span> <span className="value-color">'{work.projectName}'</span>,{'\n'}
-        &nbsp;&nbsp;<span className="braces-color">techStack:</span> [<span className="value-color">
+        <span className={isDarkMode?"const-color":"const-color-light"}>const</span> <span className={isDarkMode?"work-dark":"work-light"}>work </span><span className={isDarkMode?"equal-color":"equal-color-light"}>=</span> 
+        <span className='curlly-braces'>{'{\n'}</span>
+        &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>Organisation:</span> <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Organisation}'</span>
+        <span className="value-color-light">,{'\n'}</span>
+        &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>Location:</span> <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Location}'</span>
+        <span className="value-color-light">,{'\n'}</span>
+        &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>projectName:</span> <span className={isDarkMode?"value-color":"value-color-light"}>'{work.projectName}'</span>
+        <span className="value-color-light">,{'\n'}</span>
+        &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>techStack:</span> <span className='curlly-braces'>[</span><span className={isDarkMode?"value-color":"value-color-light"}>
           {work.techStack.map((tech, index) => (
-            <span key={index}>
+            <span  key={index}>
               '{tech}'{index < work.techStack.length - 1 ? ', ' : ''}
             </span>
           ))}
-        </span>],{'\n'}
-        &nbsp;&nbsp;<span className="braces-color">Description:</span> <span className="value-color">'{work.Description}'</span>{'\n'}
-        {'};'}
+        </span><span className='curlly-braces'>],{'\n'}</span>
+        &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>Description:</span> 
+        <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Description}'</span>
+        {'\n'}
+        <span className='curlly-braces'>{'};'}</span>
       </pre>
     </div>
   );

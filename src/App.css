@@ -23,15 +23,25 @@
   
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(235, 235, 243);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider-light {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -55,12 +65,32 @@
   transition: .4s;
 }
 
+.slider-light:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #359f8d;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
 input:checked + .slider {
+  background-color: rgb(0, 0, 0);
+}
+
+input:checked + .slider-light {
   background-color: rgb(0, 0, 0);
 }
 
 input:focus + .slider {
   box-shadow: 0 0 10px #ff6347;
+}
+
+input:focus + .slider-light {
+  box-shadow: 0 0 10px #5eec89;
 }
 
 input:checked + .slider:before {
@@ -69,12 +99,25 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+input:checked + .slider-light:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
 .slider.round {
   border-radius: 34px;
 }
 
+.slider-light.round {
+  border-radius: 34px;
+}
+
 .slider.round:before {
+  border-radius: 50%;
+}
+
+.slider-light.round:before {
   border-radius: 50%;
 }
 
@@ -89,15 +132,36 @@ input:checked + .slider:before {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.footer-text-light {
+  text-align: left;
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .footer-line {
   margin: 20px auto;
   width: 100%;
   border: none;
-  border-top: 1px solid #ddd; /* Adjust color as needed */
+  border-top: 1px solid #ddd;
+}
+
+.footer-line-light {
+  margin: 20px auto;
+  width: 100%;
+  border: none;
+  border-top: 1px solid black;
 }
 
 .footer-text .highlight-name {
-  color: #ff6347; /* Adjust this color as needed */
+  color: #ff6347;
+}
+
+.footer-text-light .highlight-name {
+  color: #359f8d; 
 }
 
 @media (max-width: 1000px) {
@@ -114,8 +178,18 @@ input:checked + .slider:before {
     bottom: 2px;
   }
 
+  .slider-light:before {
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 2px;
+  }
+
   .footer-text {
     font-size: 0.8rem;
+  }
 
+  .footer-text-light {
+    font-size: 0.8rem;
   }
 }

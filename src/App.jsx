@@ -31,7 +31,7 @@ function App() {
       <div className='switch-container'>
       <label className="switch">
         <input type="checkbox" checked={!isDarkMode} onChange={toggleDarkMode} />
-        <span className="slider round"></span>
+        <span className={isDarkMode?"slider round":"slider-light round"}></span>
       </label>
       </div>
       <Header
@@ -46,13 +46,13 @@ function App() {
 
       <About isDarkMode={isDarkMode}ref={aboutRef} />
       <Experience isDarkMode={isDarkMode} ref={experienceRef} />
-      <Skills ref={skillsRef} />
-      <Education ref={educationRef} />
-      <Contact ref={contactRef} />
+      <Skills  isDarkMode={isDarkMode} ref={skillsRef} />
+      <Education isDarkMode={isDarkMode} ref={educationRef} />
+      <Contact  isDarkMode={isDarkMode} ref={contactRef} />
 
-      <hr className="footer-line" />
+      <hr className={isDarkMode?"footer-line":"footer-line-light"} />
 
-      <footer className="footer-text">
+      <footer className={isDarkMode?"footer-text":"footer-text-light"}>
         &copy;2024 portfolio developed by <span className="highlight-name">Shubham Mishra</span>
       </footer>
     </div>

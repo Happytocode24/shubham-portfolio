@@ -11,7 +11,7 @@ const education = [
   { logo: maharashi, title: "Maharashi Vidhya Mandir Rewa M.P ", description: "12th Standard" },
 ];
 
-const Education = React.forwardRef((props, ref) => {
+const Education = React.forwardRef(({isDarkMode}, ref) => {
   const [index, setIndex] = useState(0);
   const educationLength = education.length;
   const containerRef = useRef(null);
@@ -61,7 +61,7 @@ const Education = React.forwardRef((props, ref) => {
 
   return (
     <div className="education-container" ref={ref}>
-      <h1 className="education-title">Education</h1>
+      <h1 className={isDarkMode?"education-title":"education-title-light"}>Education</h1>
       <div
         className="education-list"
         ref={containerRef}
@@ -80,12 +80,12 @@ const Education = React.forwardRef((props, ref) => {
 
           return (
             <div className={className} key={i}>
-              <div className="education-card">
+              <div className={isDarkMode?"education-card":"education-card-light"}>
                 <div className="logo-title-container">
                   <img src={item.logo} alt={`${item.title} logo`} className="education-logo" />
-                  <h2 className="college-title">{item.title}</h2>
+                  <h2 className={isDarkMode?"college-title":"college-title-light"}>{item.title}</h2>
                 </div>
-                <p className="degree-description">{item.description}</p>
+                <p className={isDarkMode?"degree-description":"degree-description-light"}>{item.description}</p>
               </div>
             </div>
           );

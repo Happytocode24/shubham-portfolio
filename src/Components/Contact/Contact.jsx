@@ -7,9 +7,13 @@ import githubLogo from '../logos/social.png';
 import linkedInLogo from '../logos/LinkedIn2.png';
 import mailLogo from '../logos/mail.png';
 import callLogo from '../logos/phone-call.png';
-import sendLogo from '../logos/icons8-send-64.png'
+import sendLogo from '../logos/icons8-send-64.png';
+import githubLight from '../logos/contact-github-light.png';
+import LinkedInLight from '../logos/contact-linkedin-light.svg'
+import callLight from '../logos/contact-light-50.png'
+import emailLight from '../logos/contact-email-light-50.png'
 
-const Contact = React.forwardRef((props, ref) => {
+const Contact = React.forwardRef(({isDarkMode}, ref) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [error, setError] = useState('');
 
@@ -50,10 +54,10 @@ const Contact = React.forwardRef((props, ref) => {
 
   return (
     <div className="contact-container" ref={ref}>
-      <h1 className="contact-title">Contact</h1>
+      <h1 className={isDarkMode?"contact-title":"contact-title-light"}>Contact</h1>
       <div className="contact-wrapper">
-        <div className="contact-card">
-          <p className="additional-text">If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests.</p>
+        <div className={isDarkMode?"contact-card":"contact-card-light"}>
+          <p className={isDarkMode?"additional-text":"additional-text-light"}>If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests.</p>
           <form onSubmit={handleSubmit} className="contact-form">
             <input 
               type="text" 
@@ -79,7 +83,8 @@ const Contact = React.forwardRef((props, ref) => {
               onChange={handleChange} 
             />
             {error && <p className="error-message">{error}</p>}
-            <button type="submit" className="send-button">
+            <button type="submit" 
+            className={isDarkMode?"send-button":"send-button-light"}>
               Send Message
               <img src={sendLogo} alt="Message" className="icon-small" />
             </button>
@@ -87,22 +92,22 @@ const Contact = React.forwardRef((props, ref) => {
         </div>
         <div className="contact-info">
           <div className="contact-item">
-            <img src={callLogo} alt="Phone" className="contact-logo" />
-            <span className="contact-text">+918224999659</span>
+            <img src={isDarkMode?callLogo:callLight} alt="Phone" className="contact-logo" />
+            <span className={isDarkMode?"contact-text":"contact-text-light"}>+918224999659</span>
           </div>
           <div className="contact-item">
-            <img src={mailLogo} alt="Email" className="contact-logo" />
-            <span className="contact-text">shubhambitspilani@yahoo.com</span>
+            <img src={isDarkMode?mailLogo:emailLight} alt="Email" className="contact-logo" />
+            <span className={isDarkMode?"contact-text":"contact-text-light"}>shubhambitspilani@yahoo.com</span>
           </div>
-          <div className="social-links">
+          <div className={isDarkMode?"social-links":"social-links-light"}>
             <div className="contact-item">
               <a href="https://github.com/Happytocode24" target="_blank" rel="noopener noreferrer">
-                <img src={githubLogo} alt="GitHub" className="social-media-logo" />
+                <img src={isDarkMode?githubLogo:githubLight} alt="GitHub" className="social-media-logo" />
               </a>
             </div>
             <div className="contact-item">
               <a href="https://www.linkedin.com/in/shubham-mishra-669726154/" target="_blank" rel="noopener noreferrer">
-                <img src={linkedInLogo} alt="LinkedIn" className="social-media-logo" />
+                <img src={isDarkMode?linkedInLogo:LinkedInLight} alt="LinkedIn" className="social-media-logo" />
               </a>
             </div>
           </div>

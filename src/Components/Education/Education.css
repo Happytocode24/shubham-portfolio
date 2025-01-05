@@ -20,6 +20,15 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.education-title-light {
+  font-size: 3.5rem;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-bottom: 30px;
+  color: #359f8d;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .education-list {
   position: relative;
   width: 100%;
@@ -77,6 +86,17 @@
   align-items: center;
 }
 
+.education-card-light {
+  background: #71787e5f;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logo-title-container {
   display: flex;
   align-items: center;
@@ -99,8 +119,25 @@
      Arial, sans-serif;
 }
 
+.college-title-light {
+  font-weight: bold;
+  margin: 0;
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+    'Lucida Grande', 'Lucida Sans',
+     Arial, sans-serif;
+}
+
 .degree-description {
   color: #ff6347;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+  'Lucida Grande', 'Lucida Sans',
+   Arial, sans-serif;
+}
+
+.degree-description-light{
+  color: #359f8d;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
   'Lucida Grande', 'Lucida Sans',
    Arial, sans-serif;
@@ -119,6 +156,10 @@
     padding: 10px;
   }
 
+  .education-card-light {
+    width: 90%;
+    padding: 10px;
+  }
   .logo-title-container {
     gap: 10px;
   }
@@ -133,11 +174,18 @@
     font-size: 1rem;
   }
 
+  .college-title-light {
+    font-size: 1rem;
+  }
+
   .education-item p {
     font-size: 0.8rem;
   }
 
   .education-title {
+    font-size: 2.5rem;
+  }
+  .education-title-light {
     font-size: 2.5rem;
   }
 }

@@ -19,6 +19,7 @@ export default function Header({ isDarkMode, scrollToAbout, scrollToEducation, s
         <div className="header-container">
             {/* Sidebar */}
             <Sidebar 
+                isDarkMode={isDarkMode}
                 isOpen={isSidebarOpen} 
                 toggleSidebar={toggleSidebar}
                 scrollToAbout={scrollToAbout}

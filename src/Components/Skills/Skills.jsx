@@ -32,7 +32,7 @@ const skills = [
   { name: "JQuery", logo: jquerylogo },
 ];
 
-const Skills = React.forwardRef((props, ref) => {
+const Skills = React.forwardRef(({isDarkMode}, ref) => {
   const skillsCarouselRef = useRef(null);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
@@ -61,16 +61,16 @@ const Skills = React.forwardRef((props, ref) => {
 
   return (
     <div className="skills-container" ref={ref}>
-      <h1 className="skills-title">Skills</h1>
+      <h1 className={isDarkMode?"skills-title":"skills-title-light"}>Skills</h1>
       <button className="scroll-button left" onClick={scrollLeft}>{"<"}</button>
       <div
         className={`skills-carousel ${isAutoScrolling ? 'auto-scroll' : ''}`}
         ref={skillsCarouselRef}
       >
         {[...skills, ...skills].map((skill, index) => (
-          <div className="skill-card" key={index}>
+          <div className={isDarkMode?"skill-card":"skill-card-light"} key={index}>
             <img src={skill.logo} alt={`${skill.name} logo`} className="skill-logo" />
-            <span className="skill-name">{skill.name}</span>
+            <span className={isDarkMode?"skill-name":"skill-name-light"}>{skill.name}</span>
           </div>
         ))}
       </div>

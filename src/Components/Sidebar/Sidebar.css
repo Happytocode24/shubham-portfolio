@@ -31,8 +31,24 @@
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.sidebar-button-light {
+    font-size:small;
+    color: white;
+    background: none;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .sidebar-button:hover {
     color: #ff6347;
+}
+
+.sidebar-button-light:hover {
+    color: #359f8d;
 }
 
 .close-btn {
@@ -41,6 +57,17 @@
     right: 30px;
     font-size: 2.5rem;
     color: #ff6347;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-btn-light {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #359f8d;
     background: none;
     border: none;
     cursor: pointer;

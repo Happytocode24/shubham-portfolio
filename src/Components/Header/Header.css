@@ -66,13 +66,11 @@
 
 
 .header-button:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
   color: #ff6347;
 }
 
 .header-button-light:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
   color: #359f8d;
 }
