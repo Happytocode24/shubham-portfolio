@@ -8,124 +8,10 @@
   flex-direction: column;
 }
 
-.switch-container {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 20px;
-}
-
-.switch {
-  margin-top: 10px;
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(235, 235, 243);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider-light {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(235, 235, 243);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #ff6347;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider-light:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #359f8d;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: rgb(0, 0, 0);
-}
-
-input:checked + .slider-light {
-  background-color: rgb(0, 0, 0);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 10px #ff6347;
-}
-
-input:focus + .slider-light {
-  box-shadow: 0 0 10px #5eec89;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-input:checked + .slider-light:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider-light.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.slider-light.round:before {
-  border-radius: 50%;
-}
-
 .footer-text {
   text-align: left;
   margin-left: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: white;
   font-size: 1rem;
   font-weight: 500;
@@ -135,8 +21,7 @@ input:checked + .slider-light:before {
 .footer-text-light {
   text-align: left;
   margin-left: 100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: black;
   font-size: 1rem;
   font-weight: 500;
@@ -165,26 +50,6 @@ input:checked + .slider-light:before {
 }
 
 @media (max-width: 1000px) {
-  .switch {
-    width: 48px;
-    height: 19px;
-    
-  }
-
-  .slider:before {
-    height: 15px;
-    width: 15px;
-    left: 4px;
-    bottom: 2px;
-  }
-
-  .slider-light:before {
-    height: 15px;
-    width: 15px;
-    left: 4px;
-    bottom: 2px;
-  }
-
   .footer-text {
     font-size: 0.8rem;
   }

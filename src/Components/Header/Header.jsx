@@ -8,7 +8,7 @@ import contactLogo from '../logos/icons8-contact-50.png'
 import githubLogoLight from '../logos/githubLight.svg'
 import linkedInLogoLight from '../logos/LinkedInLight.svg'
 
-export default function Header({ isDarkMode, scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
+export default function Header({ isDarkMode,toggleDarkMode, scrollToAbout, scrollToEducation, scrollToContact, scrollToExperience, scrollToSkills }) {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
 
     const toggleSidebar = () => {
@@ -17,7 +17,6 @@ export default function Header({ isDarkMode, scrollToAbout, scrollToEducation, s
 
     return (
         <div className="header-container">
-            {/* Sidebar */}
             <Sidebar 
                 isDarkMode={isDarkMode}
                 isOpen={isSidebarOpen} 
@@ -28,19 +27,36 @@ export default function Header({ isDarkMode, scrollToAbout, scrollToEducation, s
                 scrollToEducation={scrollToEducation}
                 scrollToContact={scrollToContact}
             />
-            <li className="header">
+            <li className={isDarkMode?"header":"header-light"}>
                 <p className={isDarkMode?"name":'name-light'}>SHUBHAM MISHRA</p>
-                <button className={isDarkMode?"menu-btn":"menu-btn-light"} onClick={toggleSidebar}>&#9776;</button>
+                <button 
+                    className={isDarkMode ? "menu-btn" : "menu-btn-light"} 
+                    onClick={toggleSidebar}
+                    >
+                    {isSidebarOpen ? '×' : '☰'}
+                    </button>
 
                 <div className="header-button-container">
-                    <button className={isDarkMode?"header-button":'header-button-light'} onClick={scrollToAbout}>ABOUT</button>
+                    <button 
+                    className={isDarkMode?"header-button":'header-button-light'} 
+                    onClick={scrollToAbout}
+                    >ABOUT
+                    </button>
                     <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToExperience}>EXPERIENCE</button>
                     <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToSkills}>SKILLS</button>
                     <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToEducation}>EDUCATION</button>
                     <button className={isDarkMode?"header-button":'header-button-light'} >PROJECT</button>
                     <button className={isDarkMode?"header-button":'header-button-light'}  onClick={scrollToContact}>CONTACT</button>
                 </div>
+
+                <div className='switch-container'>
+                <label className="switch">
+                <input type="checkbox" checked={!isDarkMode} onChange={toggleDarkMode} />
+                <span className={isDarkMode?"slider round":"slider-light round"}></span>
+                </label>
+      </div>
             </li>
+            <hr className={isDarkMode?"header-line":"header-line-light"}/>
             <div className={isDarkMode?"intro-container":"intro-container-light"}>
                 <div className="text-container">
                     <span className={isDarkMode?"intro-welcome":"intro-welcome-light"}>Welcome!</span><br />
