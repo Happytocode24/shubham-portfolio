@@ -15,12 +15,12 @@
 
 .sidebar-light {
     position: fixed;
-    top: 13.5%;
+    top: 12.8%;
     right: -100%;
     width: 150px;
     height: 100%;
     background-color: rgba(197, 197, 207, 0.913);
-    transition: right 0.7s ease-in-out;
+    transition: right 0.9s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
