@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 250px;
+    width: 150px;
     height: 100%;
     background-color: rgba(25, 25, 27, 0.913);
     transition: right 0.7s ease-in-out;
@@ -15,9 +15,9 @@
 
 .sidebar-light {
     position: fixed;
-    top: 0;
+    top: 13.5%;
     right: -100%;
-    width: 250px;
+    width: 150px;
     height: 100%;
     background-color: rgba(197, 197, 207, 0.913);
     transition: right 0.7s ease-in-out;
@@ -37,7 +37,7 @@
 }
 
 .sidebar-button{
-    font-size: medium;
+    font-size:0.7rem;
     color: whitesmoke;
     background: none;
     border: none;
@@ -48,7 +48,7 @@
 }
 
 .sidebar-button-light {
-    font-size: medium;
+    font-size:0.7rem;
     color: black;
     background: none;
     border: none;
@@ -66,14 +66,5 @@
     color: #359f8d;
 }
 
-.close-btn, .close-btn-light {
-    position: absolute;
-    top: 15px;
-    left: 20px; /* Move close button to the left inside the sidebar */
-    font-size: 2.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
 
 

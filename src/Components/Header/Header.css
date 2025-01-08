@@ -39,7 +39,7 @@
 
 .header-line {
   position: fixed;
-  margin: 5px auto;
+  margin: 0.1px auto;
   width: 100%;
   border: none;
   border-top: 1.5px solid rgba(255, 255, 255, 0.335);
@@ -47,7 +47,7 @@
 }
 .header-line-light {
   position: fixed;
-  margin: 5px auto;
+  margin: 0.1px auto;
   width: 100%;
   border: none;
   border-top: 1.5px solid #0000004a;
@@ -632,10 +632,12 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 5%;
   }
 
   .intro-container-light {
     margin: 0;
+    margin-top: 5%;
     flex-direction: column;
     align-items: center;
     text-align: center;
