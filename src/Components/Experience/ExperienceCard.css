@@ -66,8 +66,11 @@
  
 }
 
-.curlly-braces{
+.curlly-braces-light{
   color: rgb(234, 11, 204);
+}
+.curlly-braces{
+  color: white;
 }
 
 .braces-color-light {

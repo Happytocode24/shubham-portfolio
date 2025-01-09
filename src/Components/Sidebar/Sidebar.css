@@ -66,5 +66,22 @@
     color: #359f8d;
 }
 
+@media (max-height: 430px) {
+    .sidebar-button-light {
+        font-size:0.6rem;
+        margin: 5px;
+    }
+    .sidebar-button {
+        font-size:0.6rem;
+        margin: 5px;
+    }
 
+    .sidebar-light {
+        margin-top: 5%;
+    }
+    .sidebar{
+        margin-top: 5%;
+    }
+    
+}
 

@@ -20,25 +20,23 @@ const Contact = React.forwardRef(({isDarkMode}, ref) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setError(''); // Clear error message on change
+    setError('');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
 
-    // Check for empty fields
     if (!name || !email || !message) {
       setError('Please fill out all fields.');
       return;
     }
 
-    // Construct the data to match the EmailJS template placeholders
     const emailData = {
-      to_name: 'Shubham Mishra',  // Set your name or any other recipient detail
-      from_name: name,            // From the form's name field
-      email: email,               // Sender's email from the form
-      message: message            // Message content from the form
+      to_name: 'Shubham Mishra',  
+      from_name: name,            
+      email: email,              
+      message: message     
     };
 
     // Use EmailJS to send the message
