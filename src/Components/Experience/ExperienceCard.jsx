@@ -7,7 +7,17 @@ const ExperienceCard = ({ isDarkMode,work }) => {
       <pre className="experience-details">
         <span className={isDarkMode?"const-color":"const-color-light"}>const</span> <span className={isDarkMode?"work-dark":"work-light"}>work </span><span className={isDarkMode?"equal-color":"equal-color-light"}>=</span> 
         <span className='curlly-braces'>{'{\n'}</span>
-        &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>Organisation:</span> <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Organisation}'</span>
+        &nbsp;&nbsp;
+        <span className={isDarkMode?"braces-color":"braces-color-light"}>
+          Organisation:</span> 
+          <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Organisation}'
+          </span>
+          <span className='curlly-braces'>{'{\n'}</span>
+        &nbsp;&nbsp;
+        <span className={isDarkMode?"braces-color":"braces-color-light"}>
+          Preiod:</span> 
+          <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Period}'
+          </span>
         <span className="value-color-light">,{'\n'}</span>
         &nbsp;&nbsp;<span className={isDarkMode?"braces-color":"braces-color-light"}>Location:</span> <span className={isDarkMode?"value-color":"value-color-light"}>'{work.Location}'</span>
         <span className="value-color-light">,{'\n'}</span>

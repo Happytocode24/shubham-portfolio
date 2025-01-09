@@ -8,6 +8,7 @@ const experiences = [
     title: "Software Engineer at Cisco",
     work: {
       Organisation: "Cisco",
+      Period:"Aug 2022 - Present",
       Location: 'Banglore',
       projectName: "Cx Cloud",
       techStack: ['React.js', 'Angular', 'Python', 'Machine Learning', 'Flask', 'Java', 'SpringBoot'],
@@ -18,6 +19,7 @@ const experiences = [
     title: "Intern at Cisco",
     work: {
       Organisation: "Cisco",
+      Period:"Jan 2022 - July 2022",
       Location: 'Banglore',
       projectName: "Licensing Support Bot",
       techStack: ['Python', 'Webhook', 'HTML', 'CSS' ,'React.js', 'Angular'],
